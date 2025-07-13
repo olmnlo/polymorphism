@@ -57,6 +57,8 @@ public class Main {
                         break;
                     case 5:
                         break outerLoop;
+                    default:
+                        System.out.println("you must chose from menu");
 
                 }
             }catch (Exception e){
