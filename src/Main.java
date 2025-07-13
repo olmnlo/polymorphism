@@ -1,4 +1,3 @@
-import person.Person;
 import vehicle.*;
 
 import java.util.ArrayList;
@@ -8,9 +7,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         ArrayList<Vehicle> vehicles_rented = new ArrayList<>();
-        ArrayList<Person> people = new ArrayList<>();
-
-
 
         int user_chose;
         outerLoop:
@@ -21,9 +17,7 @@ public class Main {
                     2- Rent a Bike
                     3- Rent a Truck
                     4- View Rented Vehicles
-                    5- show list of users
-                    6- add new user
-                    7- Exit
+                    5- Exit
                     """);
             try {
 
@@ -62,14 +56,6 @@ public class Main {
                         }
                         break;
                     case 5:
-                        for (Person p : people){
-                            System.out.println(p);
-                        }
-                        break;
-                    case 6:
-                        people = addNewUser(people);
-                        break;
-                    case 7:
                         break outerLoop;
 
                 }
@@ -81,23 +67,4 @@ public class Main {
         }
     }
 
-    private static ArrayList<Person> addNewUser(ArrayList<Person> people) {
-        Scanner scn = new Scanner(System.in);
-        int n = people.size()+1;
-        while(people.size() < n){
-            System.out.print("Enter your name: ");
-            scn.nextLine();
-            String name = scn.nextLine();
-            System.out.print("Enter your age: ");
-            int age = scn.nextInt();
-            System.out.println("enter national id: ");
-            String national_id = scn.next();
-            System.out.print("do you have license yes/no");
-            String license = scn.next();
-            boolean haveLicense = license.equalsIgnoreCase("yes");
-            people.add(new Person(name,age,national_id,haveLicense));
-        }
-        scn.close();
-        return people;
-    }
 }
