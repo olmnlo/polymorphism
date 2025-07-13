@@ -42,7 +42,7 @@ public class Main {
                         vehicles_rented.add(new Bike(bike_brand, hours));
                         break;
                     case 3:
-                        System.out.print("Enter type of truck");
+                        System.out.print("Enter type of truck: ");
                         scn.nextLine();
                         String truck_type = scn.nextLine();
                         System.out.print("Enter how many weeks of rent: ");
@@ -61,6 +61,7 @@ public class Main {
                 }
             }catch (Exception e){
                 System.out.println("you must enter integer");
+                scn.next();
             }
 
 
